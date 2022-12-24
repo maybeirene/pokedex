@@ -1,5 +1,5 @@
-const retrieveAllPokemons = () => {
-    return fetch(`https://pokeapi.co/api/v2/pokemon/?limit=50`)
+const retrieveAllPokemon = () => {
+    return fetch(`https://pokeapi.co/api/v2/pokemon/?limit=20`)
     .then(res => {
         const { status } = res
 
@@ -9,7 +9,7 @@ const retrieveAllPokemons = () => {
                     return response})
 
       if (res.status >= 400) {
-        console.error('error cliente o servidor')
+        console.error('client or server error')
         throw res
       }
       
@@ -17,7 +17,7 @@ const retrieveAllPokemons = () => {
     })
   }
   
-  export default retrieveAllPokemons
+  export default retrieveAllPokemon
 
 /*
     else if (status >= 400 && status < 500)

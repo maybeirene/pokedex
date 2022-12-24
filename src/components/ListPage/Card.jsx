@@ -1,11 +1,11 @@
 import React from 'react';
 import './Card.css';
 
-function Card() {  
+function Card(props) {  
   return (
     <div className="Card">
         <p className="Card__id">#id</p>
-        <p className="Card__name">Name</p>
+        <p className="Card__name">{props.name}</p>
     </div>
   );
 }
