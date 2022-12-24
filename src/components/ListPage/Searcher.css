@@ -1,0 +1,38 @@
+.Searcher {
+    padding: 0.5rem;
+}
+
+.Searcher__form {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    color: var(--color-secondary);
+}
+
+@media (min-width: 600px) {
+    .Searcher__form {
+        width: 350px;
+    }
+}
+
+.Searcher__input {
+    width: 100%;
+    padding-left: 0.4rem;
+    border-radius: 5px 0 0 5px;
+}
+
+.Searcher__button {
+    width: 2.5rem;
+    padding: 0.2rem;
+    border-radius: 0 5px 5px 0;
+    font-weight: 700;
+    background-color: #fc881c;
+}
+
+.Searcher__button, .Searcher__input{
+    border: none;
+    outline: none;
+    height: 2rem;
+    color: var(--color-secondary-dark);
+}

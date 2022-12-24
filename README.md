@@ -1,3 +1,18 @@
+# To-dos
+
+## Crear dos pantallas 
+    - Tabla de pokemon 
+        - Columnas (name, url)
+        - listado ordenado alfabeticamente
+        - buscador por nombre en realtime
+        - Al hacer click sobre un registro, abrir una nueva pantalla (pant. 2)
+    - Panta informacion pokemon
+        -Listar informacion (name, sprites back default, abilities disponibles, moves, realizar un GET en la url en la propiedad forms y listar su informacion (id,battlle_only))
+        - Las imagenes tienen que poder visualizarse
+        - Hacer un boton que elimine un move
+        - Ordenar de mayor a menor los moves en Base a la URL
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

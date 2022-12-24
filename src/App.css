@@ -1,3 +1,10 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
 .App-header {
   min-height: fit-content;
   padding: 1rem 0;
@@ -6,5 +13,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--color-white);
+}
+
+.App-content {
+  width: 70%;
+  min-height: 5rem ;
+  border: 2px solid var(--color-primary);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  background-color: #b5cbf812;
+
 }

@@ -1,0 +1,28 @@
+.Detail {
+    display: grid;
+    grid-template-columns: repeat( 3, 2fr); 
+    /* grid-template-columns: 2fr 3fr; */
+    gap: 1rem;
+    color: var(--color-primary-light)
+}
+.Detail__title {
+    grid-area: 1 / 1 / 2/ 4;
+    /*grid-area: 1 / 1 / 2/ 3;*/
+    text-align: center;
+    color: var(--color-white);
+}
+.Detail__image {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.Detail__info p {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+li {
+    list-style: none;
+}
