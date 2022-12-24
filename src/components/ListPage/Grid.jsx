@@ -31,9 +31,8 @@ function Grid() {
     <div >
       <ul className="Grid">
         {pokemonList? pokemonList.map(pokemon=>{
-          console.log(pokemon)
           return <li key={pokemon.url}>
-                      <Card  id={pokemon.url} name={pokemon.name} />
+                      <Card  url={pokemon.url} name={pokemon.name} />
           </li>
         })
         : <h3>No pokemon found</h3>
