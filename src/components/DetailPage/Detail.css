@@ -10,11 +10,14 @@
     /*grid-area: 1 / 1 / 2/ 3;*/
     text-align: center;
     color: var(--color-white);
+    text-transform: uppercase;
 }
 .Detail__image {
     display: flex;
     justify-content: center;
     align-content: center;
+    max-width: 10rem;
+    max-height: 10rem;
 }
 
 .Detail__info p {
@@ -25,4 +28,15 @@
 }
 li {
     list-style: none;
+    margin-left: 1rem;
+    text-transform: capitalize;
+}
+.Detail__back-button{
+    background: none;
+    border: none;
+    color: var(--color-primary-light)
+}
+.Detail__back-button:hover{
+    cursor: pointer;
+    text-decoration: underline;
 }

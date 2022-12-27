@@ -1,29 +1,68 @@
-import React from 'react';
-import './Detail.css';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import retrievePokemonDetail from "../../logic/retrievePokemonDetail";
+import Abilities from "./Abilities";
+import Moves from "./Moves";
 
-function Detail() {  
-    let imagenBack = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/2.png'
-    let imagen = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png'
+import "./Detail.css";
+
+function Detail() {
+  const [pokemon, setPokemon] = useState();
+  const [feedback, setFeedback] = useState();
+
+  const navigate = useNavigate();
+
+  const params = window.location.pathname;
+
+  const getPokemon = (params) => {
+    try {
+      retrievePokemonDetail(params)
+        .then((res) => {
+          setPokemon(res);
+        })
+        .catch((error) => {
+          console.error(error);
+          setFeedback("error");
+        });
+    } catch (error) {
+      setFeedback("error");
+    }
+  };
+
+  useEffect(() => {
+    getPokemon(params);
+  }, []);
+
   return (
-    <div className="Detail">
-        <h1 className="Detail__title">Name</h1>
-        <div className="Detail__image">
-            <img src={imagen} alt="" />
-        </div>
-        <div className="Detail__info">
-            <p>Abilities</p>
-            <ul>
-                <li>ab1</li>
-                <li>ab2</li>
-            </ul>
-            <p>Moves</p>
-            <ul>
-                <li>move1</li>
-                <li>move2</li>
-            </ul>
-            <p>forms</p>
+    <div>
+      <button
+        className="Detail__back-button"
+        onClick={() => {
+          navigate("../");
+        }}
+      >
+        ← Back
+      </button>
+      {pokemon ? (
+        <div className="Detail">
+          <h1 className="Detail__title">
+            #{pokemon.id} {pokemon.name}
+          </h1>
+          <div className="Detail__image">
+            <img src={pokemon.sprite} alt={pokemon.name} />
+          </div>
+          <div className="Detail__info">
+            <Abilities data={pokemon.abilities} />
+            <Moves data={pokemon.moves} />
 
+            <div>
+              <p>Forms</p>
+            </div>
+          </div>
         </div>
+      ) : (
+        <h1>Not found</h1>
+      )}
     </div>
   );
 }

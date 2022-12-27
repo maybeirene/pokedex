@@ -1,0 +1,11 @@
+.Moves__delete-button{
+    background: none;
+    border: none;
+    color: var(--color-primary-light);
+    margin-right: 2rem;
+}
+
+.Moves__delete-button:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}

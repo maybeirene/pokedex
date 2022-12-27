@@ -15,7 +15,6 @@ function Grid() {
               .catch(error=>{
                 console.error(error)
                 setFeedback('error')
-                  
               })
       } catch (error) {
           setFeedback('error')
@@ -24,7 +23,6 @@ function Grid() {
 
   useEffect(() => {
     getAllPokemon()
-    
   }, [])
 
   return (
